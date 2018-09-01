@@ -1,0 +1,5 @@
+#!/bin/bash
+while true
+do
+  login -f `id -un`
+done
