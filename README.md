@@ -1,6 +1,21 @@
 Wetty = Web + tty
 -----------------
 
+Modified version (fork):
+
+- Added fix for space bar bug on iPad (Thanks DirkTheDaring)
+- Made weety to *always* login - not only if running as root.
+- Added a small script "logins" that runs "login" in an infinite loop to prevent hiccups when accidentally logging out.
+
+The original logic to "login" when running as root while "ssh"ing when running as non-root
+seemed kind of weird to me. I want login all the time. If I want to ssh anywhere, I just
+type "ssh xyz" in the terminal.
+
+The looped login is badly needed I feel, especially when run in an embedded fashion, which
+will almost always be the case.
+
+Original version:
+
 Terminal over HTTP and HTTPS. Wetty is an alternative to
 ajaxterm/anyterm but much better than them because wetty uses ChromeOS'
 terminal emulator (hterm) which is a full fledged implementation of

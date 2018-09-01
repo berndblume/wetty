@@ -5747,6 +5747,12 @@ hterm.Keyboard.prototype.onKeyUp_ = function(e) {
  * Handle onKeyDown events.
  */
 hterm.Keyboard.prototype.onKeyDown_ = function(e) {
+  if (e.keyCode == 32) {
+    var iPad = window.navigator.userAgent.match(/iPad/);
+    if (iPad) {
+      this.terminal.onVTKeystroke(String.fromCharCode(e.keyCode));
+    }
+  }
   if (e.keyCode == 18)
     this.altKeyPressed = this.altKeyPressed | (1 << (e.location - 1));
 
